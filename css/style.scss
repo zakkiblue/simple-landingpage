@@ -34,7 +34,6 @@ header {
 }
 
 nav {
-
     flex: 2;
 }
 
@@ -64,7 +63,7 @@ nav {
 }
 
 .introduction {
-    flex: 1;
+    flex: 2;
 }
 
 .intro-text h1 {
@@ -102,12 +101,93 @@ nav {
     width: 150px;
     height: 50px;
     cursor: pointer;
+    margin: 10px 0 0 10px;
 }
 
 .cover {
     flex: 1;
+    height: 50vh;
+    justify-content: flex-end;
+    animation: drop 1.5s ease;
 }
 
 .cover img {
-    height: 50vh;
+    height: 100%;
+}
+
+.big-eclipse {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 70%;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.mid-eclipse {
+    position: absolute;
+    top: 35%;
+    right: 35%;
+    height: 50%;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.small-eclipse {
+    position: absolute;
+    bottom: 0;
+    right: 60%;
+    height: 30%;
+    z-index: -1;
+}
+
+@keyframes drop {
+    0% {
+        opacity: 0;
+        transform: translateY(-80px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px)
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .presentation {
+        flex-direction: column;
+    }
+
+    .introduction {
+        margin-top: 5vh;
+        text-align: center;
+    }
+
+    .intro-text h1 {
+        font-size: 30px;
+    }
+
+    .intro-text p {
+        font-size: 14px;
+    }
+
+    .cta-add,
+    .cta-select,
+    .cover {
+        transform: scale(0.8);
+    }
+
+    .logo {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .cta-add {
+        margin: 0px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
 }
